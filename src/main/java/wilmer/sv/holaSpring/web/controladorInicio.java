@@ -46,4 +46,10 @@ public class controladorInicio {
         modelo.addAttribute("persona", persona);
         return "modificar";
     }
+    
+    @GetMapping("/eliminar/{idPersona}")
+    public String eliminar(Persona persona){
+        personaService.eliminarPersona(persona);
+        return "redirect:/";
+    }
 }
