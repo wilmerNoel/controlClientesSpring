@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package wilmer.sv.holaSpring.web;
+import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import wilmer.sv.holaSpring.servicio.PersonaService;
@@ -34,7 +36,10 @@ public class controladorInicio {
         return "modificar";
     }
     @PostMapping("/guardar")
-    public String guardar(Persona persona){
+    public String guardar(@Valid Persona persona, Errors errors){
+        if (errors.hasErrors()) {
+           return "modificar"; 
+        }
         personaService.guardarPersona(persona);
         return "redirect:/";
     }

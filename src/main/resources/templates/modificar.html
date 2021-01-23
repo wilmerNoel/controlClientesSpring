@@ -18,12 +18,15 @@ and open the template in the editor.
             <input type="hidden" name="idPersona" th:field="*{idPersona}" />
             <label for="nombre">Nombre: </label> 
             <input type="text" name="nombre" th:field="*{nombre}" />
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">error nombre</span>
             <br/>
             <label for="apellido">Apellido: </label> 
             <input type="text" name="apellido" th:field="*{apellido}" />
+            <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">error nombre</span>
             <br/>
             <label for="email">Email: </label> 
-            <input type="email" name="email" th:field="*{email}" />
+            <input type="email" name="email" th:field="*{email}" /> 
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error nombre</span>
             <br/>
             <label for="telefono">Telefono: </label> 
             <input type="tel" name="telefono" th:field="*{telefono}" />
