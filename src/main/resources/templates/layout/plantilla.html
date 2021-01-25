@@ -12,11 +12,11 @@ and open the template in the editor.
     </head>
     <body>
         <header th:fragment="header">
-            <h1>Control Clientes</h1>
+            <h1 th:text="#{plantilla.titulo}">clientes</h1>
         </header>
         
         <footer th:fragment="footer">
-            <p>Derechos reservados <a href="#" target="_blank">Wilmer membreno</a></p>
+            <p>[[#{plantilla.pie-pagina}]] <a href="#" target="_blank">Wilmer membreno</a></p>
         </footer>
     </body>
 </html>

@@ -12,26 +12,26 @@ and open the template in the editor.
     </head>
     <body>
         <header th:replace="layout/plantilla :: header" />
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/}" th:text="#{accion.regresar}"></a>
         <br />
         <form th:action="@{/guardar}" method="post" th:object="${persona}">
             <input type="hidden" name="idPersona" th:field="*{idPersona}" />
-            <label for="nombre">Nombre: </label> 
+            <label for="nombre" th:text="#{persona.nombre}"></label> 
             <input type="text" name="nombre" th:field="*{nombre}" />
             <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">error nombre</span>
             <br/>
-            <label for="apellido">Apellido: </label> 
+            <label for="apellido" th:text="#{persona.apellido}"></label> 
             <input type="text" name="apellido" th:field="*{apellido}" />
             <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">error nombre</span>
             <br/>
-            <label for="email">Email: </label> 
+            <label for="email" th:text="#{persona.email}"></label> 
             <input type="email" name="email" th:field="*{email}" /> 
             <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error nombre</span>
             <br/>
-            <label for="telefono">Telefono: </label> 
+            <label for="telefono" th:text="#{persona.telefono}"></label> 
             <input type="tel" name="telefono" th:field="*{telefono}" />
             <br/>
-            <input type="submit" name="guardar" value="Guardar" />
+            <input type="submit" name="guardar" th:value="#{accion.guardar}"/>
         </form>
         
         <header th:replace="layout/plantilla :: footer" />
