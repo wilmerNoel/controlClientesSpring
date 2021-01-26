@@ -16,7 +16,13 @@ and open the template in the editor.
         </header>
         
         <footer th:fragment="footer">
-            <p>[[#{plantilla.pie-pagina}]] <a href="#" target="_blank">Wilmer membreno</a></p>
+            <div>
+                <br/>
+                <a th:href="@{/(lang=es)}">ES ||</a>
+                
+                <a th:href="@{/(lang=en)}">EN</a>
+            </div>
+            <span>[[#{plantilla.pie-pagina}]] <a href="#" target="_blank">Wilmer membreno</a></span>
         </footer>
     </body>
 </html>
